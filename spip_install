@@ -1,0 +1,42 @@
+#!/usr/local/bin/fish
+
+switch $argv[1]
+    # Installation d'un spip 3
+    case 3 or -3
+        # Télécharger spip3
+        curl --progress-bar http://files.spip.org/spip/stable/spip-3.0.zip > spip.zip
+    case 2 or -2
+        # Télécharger spip2.1
+        curl --progress-bar http://files.spip.org/spip/stable/spip-2.1.zip > spip.zip
+    case '*'
+        echo "Installer spip sans chichi !
+
+Usage: spip_install [VERSION] [COMMANDE]
+
+Commandes:
+3: Installe un spip version 3.0
+2: installe un spip version 2.1"
+end
+
+# Décompresser spip
+unzip spip.zip
+# Suprimer le fichier ZIP
+rm -f spip.zip
+# Créer les répertoires qui manque de toute façon
+mkdir spip/plugins spip/plugins/auto spip/squelettes
+# Activer le fichier htaccess
+cp spip/htaccess.txt spip/.htaccess
+
+# Commande supplémentaire
+if test (count $argv) -gt 1
+    switch $argv[2]
+        # Remonter spip d'un niveau
+        case '-lvlup'
+            mv spip/* $PWD
+            echo '************************'
+            echo -e 'Déplacer SPIP dans le répertoires courant [\e[0;32mOK\e[0m]'
+    end
+end
+
+echo '************************'
+echo -e '\e[0;32mInstallation des fichiers terminé !\e[0m'

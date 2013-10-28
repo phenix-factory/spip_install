@@ -1,4 +1,4 @@
-#!/usr/local/bin/fish
+# PATH TO FISH BIN
 
 switch $argv[1]
     # Installation d'un spip 3

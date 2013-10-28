@@ -1,8 +1,9 @@
+#!/usr/local/bin/fish
+
 # PATH TO FISH BIN
 # MacOS X => #!/usr/local/bin/fish
 # Linux => #!/usr/bin/fish
 
-#!/usr/local/bin/fish
 
 switch $argv[1]
     # Installation d'un spip 3

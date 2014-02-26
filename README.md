@@ -9,7 +9,8 @@ Usage: spip_install \[VERSION\] \[COMMANDE\]
 
 ###[VERSION]
 * 3: Installe un spip version 3.0
-* 2: installe un spip version 2.1
+* 2: Installe un spip version 2.1
+* loader: installe le spip_loader dans le répertoire
 
 ###[COMMANDE]
 * -lvlup: Remonter les fichiers de SPIP d'un niveau de dossier.

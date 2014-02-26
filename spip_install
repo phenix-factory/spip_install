@@ -13,7 +13,10 @@ switch $argv[1]
     case 2 or -2
         # Télécharger spip2.1
         curl --progress-bar http://files.spip.org/spip/stable/spip-2.1.zip > spip.zip
-    case '*'
+    case 'loader'
+        #installe le spip-loader
+        curl --progress-bar http://www.spip.net/spip-dev/INSTALL/spip_loader.php > spip_loader.php
+    case *
         echo "Installer spip sans chichi !
 
 Usage: spip_install [VERSION] [COMMANDE]
@@ -21,6 +24,7 @@ Usage: spip_install [VERSION] [COMMANDE]
 [VERSION]
 3: Installe un spip version 3.0
 2: installe un spip version 2.1
+loader: télécharge le spip_loader dans le répertoire
 
 [COMMANDE]
 -lvlup: Remonter les fichiers de SPIP d'un niveau de dossier.

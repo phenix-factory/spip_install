@@ -45,7 +45,7 @@ if test (count $argv) -gt 1
     switch $argv[2]
         # Remonter spip d'un niveau
         case '-lvlup'
-            mv spip/* $PWD
+            mv spip/{*,.*} $PWD
             rm -Rf spip/
             echo '************************'
             echo -e 'Déplacer SPIP dans le répertoires courant [\e[0;32mOK\e[0m]'
